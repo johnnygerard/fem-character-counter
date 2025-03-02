@@ -2,14 +2,14 @@ import AppRouterProvider from "@/component/app-router-provider";
 import Noscript from "@/component/noscript";
 import { cn } from "@/util/cn";
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import { memo, ReactNode } from "react";
 
-const geistSans = Geist({
+const dmSans = DM_Sans({
   display: "swap",
   subsets: ["latin"],
-  variable: "--font-geist-sans",
+  variable: "--font-dm-sans",
 });
 
 const APP_NAME = "placeholder";
@@ -45,10 +45,7 @@ type Props = {
 
 const RootLayout = ({ children }: Props) => {
   return (
-    <html
-      className={cn(geistSans.variable, "font-sans antialiased")}
-      lang="en-US"
-    >
+    <html className={cn(dmSans.variable, "font-sans antialiased")} lang="en-US">
       <body>
         <AppRouterProvider>{children}</AppRouterProvider>
         <Noscript />
