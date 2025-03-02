@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@layer base {
+  button:enabled {
+    cursor: pointer;
+  }
+
+  a,
+  button:enabled,
+  input {
+    /* `outline` is set to `none` to avoid conflicts with React Aria focus ring */
+    outline: none;
+  }
+}
+
+/* Disable all animations when user prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    @apply !scroll-auto;
+  }
+
+  * {
+    @apply !animate-none !transition-none;
+  }
+}
+
+/*noinspection CssUnresolvedCustomProperty*/
+@theme {
+  --breakpoint-tb: 48em; /* Tablet: 768px */
+  --breakpoint-dt: 90em; /* Desktop: 1440px */
+
+  --font-sans: var(--font-geist-sans);
+
+  --spacing: 0.25rem;
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+  }
+  --animate-fade-in: fadeIn var(--default-transition-duration)
+    var(--default-transition-timing-function);
+
+  @keyframes focusRing {
+    from {
+      outline-color: transparent;
+    }
+  }
+  --animate-focus-ring: focusRing var(--default-transition-duration)
+    var(--default-transition-timing-function);
+}
