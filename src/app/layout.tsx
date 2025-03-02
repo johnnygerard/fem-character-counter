@@ -45,8 +45,14 @@ type Props = {
 
 const RootLayout = ({ children }: Props) => {
   return (
-    <html className={cn(dmSans.variable, "font-sans antialiased")} lang="en-US">
-      <body>
+    <html className={cn(dmSans.variable)} lang="en-US">
+      <body
+        className={cn(
+          "font-sans font-normal not-italic antialiased",
+          "text-[1.25rem]/[1.4] -tracking-[0.0375rem]",
+          "text-neutral-900 dark:text-neutral-200",
+        )}
+      >
         <AppRouterProvider>{children}</AppRouterProvider>
         <Noscript />
       </body>
