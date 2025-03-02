@@ -12,8 +12,8 @@ const dmSans = DM_Sans({
   variable: "--font-dm-sans",
 });
 
-const APP_NAME = "placeholder";
-const DESCRIPTION = "placeholder";
+const APP_NAME = "Character counter";
+const DESCRIPTION = `Frontend Mentor challenge: ${APP_NAME}`;
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://example.com/placeholder"),
