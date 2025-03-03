@@ -28,6 +28,22 @@
   }
 }
 
+@custom-variant dark {
+  &:root[data-theme="dark"],
+  :root[data-theme="dark"] & {
+    /*noinspection CssInvalidAtRule*/
+    @slot;
+  }
+
+  &:root[data-theme="system"],
+  :root[data-theme="system"] & {
+    @media (prefers-color-scheme: dark) {
+      /*noinspection CssInvalidAtRule*/
+      @slot;
+    }
+  }
+}
+
 /* Disable all animations when user prefers reduced motion */
 @media (prefers-reduced-motion: reduce) {
   :root {

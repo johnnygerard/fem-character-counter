@@ -1,5 +1,7 @@
+import { loadTheme } from "@/app/actions";
 import AppRouterProvider from "@/component/app-router-provider";
 import Noscript from "@/component/noscript";
+import ThemeProvider from "@/component/theme-provider";
 import { cn } from "@/util/cn";
 import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
@@ -43,9 +45,11 @@ type Props = {
   children: ReactNode;
 };
 
-const RootLayout = ({ children }: Props) => {
+const RootLayout = async ({ children }: Props) => {
+  const theme = await loadTheme();
+
   return (
-    <html className={cn(dmSans.variable)} lang="en-US">
+    <html className={cn(dmSans.variable)} data-theme={theme} lang="en-US">
       <body
         className={cn(
           "font-sans font-normal not-italic antialiased",
@@ -54,7 +58,9 @@ const RootLayout = ({ children }: Props) => {
           "bg-neutral-0 dark:bg-neutral-900",
         )}
       >
-        <AppRouterProvider>{children}</AppRouterProvider>
+        <AppRouterProvider>
+          <ThemeProvider initialTheme={theme}>{children}</ThemeProvider>
+        </AppRouterProvider>
         <Noscript />
       </body>
     </html>
