@@ -64,6 +64,7 @@ const RootLayout = async ({ children }: Props) => {
           "text-[1.25rem]/[1.4] -tracking-[0.0375rem]",
           "text-neutral-900 dark:text-neutral-200",
           "bg-neutral-0 dark:bg-neutral-900",
+          "p-200 tb:px-400 dt:py-400",
         )}
       >
         <div
