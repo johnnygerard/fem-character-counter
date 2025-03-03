@@ -1,3 +1,4 @@
+import AppTextarea from "@/component/app-textarea";
 import { cn } from "@/util/cn";
 import { memo } from "react";
 
@@ -12,6 +13,7 @@ const HomePage = () => {
       >
         Analyze your text{"\n"}in real&#x2011;time.
       </h1>
+      <AppTextarea />
     </>
   );
 };

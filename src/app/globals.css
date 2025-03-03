@@ -7,7 +7,8 @@
 
   a,
   button:enabled,
-  input {
+  input,
+  textarea {
     /* `outline` is set to `none` to avoid conflicts with React Aria focus ring */
     outline: none;
   }
