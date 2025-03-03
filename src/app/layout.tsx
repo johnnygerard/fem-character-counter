@@ -65,7 +65,7 @@ const RootLayout = async ({ children }: Props) => {
           "text-[1.25rem]/[1.4] -tracking-[0.0375rem]",
           "text-neutral-900 dark:text-neutral-200",
           "bg-neutral-0 dark:bg-neutral-900",
-          "p-200 tb:px-400 dt:py-400",
+          "flex justify-center p-200 tb:px-400 dt:py-400",
         )}
       >
         <div
@@ -78,8 +78,10 @@ const RootLayout = async ({ children }: Props) => {
         />
         <AppRouterProvider>
           <ThemeProvider initialTheme={theme}>
-            <Header />
-            <main>{children}</main>
+            <div className="w-full max-w-248 dt:w-248">
+              <Header />
+              <main>{children}</main>
+            </div>
           </ThemeProvider>
         </AppRouterProvider>
         <Noscript />
