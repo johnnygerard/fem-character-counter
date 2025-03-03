@@ -58,6 +58,14 @@ const RootLayout = async ({ children }: Props) => {
           "bg-neutral-0 dark:bg-neutral-900",
         )}
       >
+        <div
+          aria-hidden="true"
+          className={cn(
+            "fixed -z-10 h-screen w-screen opacity-50",
+            "bg-[url(/asset/image/light-noise.png)]",
+            "dark:bg-[url(/asset/image/dark-noise.png)]",
+          )}
+        />
         <AppRouterProvider>
           <ThemeProvider initialTheme={theme}>{children}</ThemeProvider>
         </AppRouterProvider>
