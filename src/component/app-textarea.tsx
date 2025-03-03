@@ -1,11 +1,20 @@
 "use client";
 import { cn } from "@/util/cn";
-import { memo } from "react";
+import { Dispatch, memo, SetStateAction } from "react";
 import { TextArea, TextField } from "react-aria-components";
 
-const AppTextarea = () => {
+type Props = {
+  text: string;
+  setText: Dispatch<SetStateAction<string>>;
+};
+
+const AppTextarea = ({ text, setText }: Props) => {
   return (
-    <TextField aria-label="Text to analyze">
+    <TextField
+      aria-label="Text to analyze"
+      defaultValue={text}
+      onChange={setText}
+    >
       <TextArea
         placeholder="Start typing here… (or paste your text)"
         className={cn(
