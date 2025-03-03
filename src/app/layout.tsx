@@ -29,7 +29,15 @@ export const metadata: Metadata = {
       rel: "icon",
       sizes: "32x32",
       type: "image/png",
-      url: "/asset/image/favicon.png",
+      url: "/asset/image/favicon-light.png",
+      media: "(prefers-color-scheme: light)",
+    },
+    {
+      rel: "icon",
+      sizes: "32x32",
+      type: "image/png",
+      url: "/asset/image/favicon-dark.png",
+      media: "(prefers-color-scheme: dark)",
     },
   ],
   openGraph: {
