@@ -8,10 +8,10 @@ export const metadata: Metadata = {
 
 const NotFound = () => {
   return (
-    <div className="mt-400 text-center">
+    <div className="mt-8 text-center">
       <h1 className="tv_medium">404 Not Found</h1>
       <p>Sorry, the page you are looking for does not exist.</p>
-      <AppLink className="mt-300 block" href="/">
+      <AppLink className="mt-6 block" href="/">
         Back to Home
       </AppLink>
     </div>
