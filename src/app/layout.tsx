@@ -1,5 +1,6 @@
 import { loadTheme } from "@/app/actions";
 import AppRouterProvider from "@/component/app-router-provider";
+import Header from "@/component/header";
 import Noscript from "@/component/noscript";
 import ThemeProvider from "@/component/theme-provider";
 import { cn } from "@/util/cn";
@@ -76,7 +77,10 @@ const RootLayout = async ({ children }: Props) => {
           )}
         />
         <AppRouterProvider>
-          <ThemeProvider initialTheme={theme}>{children}</ThemeProvider>
+          <ThemeProvider initialTheme={theme}>
+            <Header />
+            <main>{children}</main>
+          </ThemeProvider>
         </AppRouterProvider>
         <Noscript />
       </body>
