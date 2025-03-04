@@ -32,9 +32,9 @@ const TextCounters = ({ className, text }: Props) => {
   ];
 
   return (
-    <div className={cn("flex flex-col gap-4 tb:flex-row", className)}>
+    <ul className={cn("flex flex-col gap-4 tb:flex-row", className)}>
       {counters.map(({ count, name, Shape }, index) => (
-        <div
+        <li
           key={name}
           className={cn(
             ["bg-purple-400", "bg-yellow-500", "bg-orange-500"][index],
@@ -55,9 +55,9 @@ const TextCounters = ({ className, text }: Props) => {
               "absolute h-37.5 w-37.5",
             )}
           />
-        </div>
+        </li>
       ))}
-    </div>
+    </ul>
   );
 };
 
