@@ -24,6 +24,9 @@ const AppTextarea = ({ text, setText }: Props) => {
           "bg-neutral-100 dark:bg-neutral-800",
           "data-[hovered]:bg-neutral-200 data-[hovered]:dark:bg-neutral-700",
           "text-neutral-700 dark:text-neutral-200",
+          // Use of `placeholder-current` is avoided because it does not always
+          // react to theme changes.
+          "placeholder-neutral-700/50 dark:placeholder-neutral-200/50",
           "shadow-purple-400 data-[focused]:shadow-[0_0_10px]",
         )}
       />
