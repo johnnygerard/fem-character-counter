@@ -49,6 +49,7 @@ const TextCounters = ({ className, text }: Props) => {
           </span>
           {name}
           <Shape
+            aria-hidden
             className={cn(
               "-right-[3.15625rem] tb:-right-[4.40625rem] dt:-right-[1.88544rem]",
               "absolute h-37.5 w-37.5",
