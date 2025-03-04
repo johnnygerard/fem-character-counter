@@ -69,7 +69,7 @@ const RootLayout = async ({ children }: Props) => {
         )}
       >
         <div
-          aria-hidden="true"
+          aria-hidden
           className={cn(
             "fixed top-0 left-0 -z-10 h-screen w-screen opacity-50",
             "bg-[url(/asset/image/light-noise.png)]",

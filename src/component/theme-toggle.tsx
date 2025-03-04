@@ -39,7 +39,7 @@ const ThemeToggle = () => {
           return (
             <Icon
               key={index}
-              aria-hidden="true"
+              aria-hidden
               className={cn(
                 "h-5 w-5 animate-fade-in tb:h-1/2 tb:w-1/2",
                 isSun ? "hidden dark:block" : "dark:hidden",

@@ -9,7 +9,7 @@ const AppCheckbox = ({ children, ...props }: CheckboxProps) => {
       {({ isHovered, isFocusVisible, isSelected }) => (
         <div className={cn("flex cursor-pointer items-center gap-2.5")}>
           <div
-            aria-hidden="true"
+            aria-hidden
             className={cn(
               "grid h-4 w-4 place-items-center rounded-4",
               isFocusVisible &&
