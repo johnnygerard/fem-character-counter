@@ -18,7 +18,8 @@ const AppTextarea = ({ text, setText }: Props) => {
       <TextArea
         placeholder="Start typing here… (or paste your text)"
         className={cn(
-          "mt-10 h-50 w-full resize-none rounded-12 border-2 p-3 tb:p-5 dt:mt-12",
+          "block h-50 w-full resize-none rounded-12 border-2",
+          "mt-10 p-3 tb:p-5 dt:mt-12",
           "border-neutral-200 data-[focused]:!border-purple-500 dark:border-neutral-700",
           "data-[hovered]:dark:border-neutral-600",
           "bg-neutral-100 dark:bg-neutral-800",
