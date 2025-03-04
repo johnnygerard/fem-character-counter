@@ -29,6 +29,12 @@
   }
 }
 
+:root {
+  @variant dark {
+    scrollbar-color: var(--color-neutral-500) var(--color-neutral-700);
+  }
+}
+
 @custom-variant dark {
   &:root[data-theme="dark"],
   :root[data-theme="dark"] & {
