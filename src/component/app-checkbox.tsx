@@ -12,6 +12,7 @@ const AppCheckbox = ({ children, ...props }: CheckboxProps) => {
             aria-hidden
             className={cn(
               "grid h-4 w-4 place-items-center rounded-4",
+              "transition-[background-color,border-color,box-shadow]",
               isFocusVisible &&
                 "shadow-[0_0_0_2px_var(--color-neutral-0),0_0_0_4px_var(--color-purple-400)]",
               isSelected && (isHovered ? "bg-purple-500" : "bg-purple-400"),

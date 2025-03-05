@@ -33,6 +33,7 @@ const AppTextarea = ({
 
           return cn(
             "block h-50 w-full resize-none rounded-12 border-2",
+            "transition-[background-color,border-color,box-shadow]",
             "mt-10 p-3 tb:p-5 dt:mt-12",
             "text-neutral-700 dark:text-neutral-200",
             // Use of `placeholder-current` is avoided because it does not always
