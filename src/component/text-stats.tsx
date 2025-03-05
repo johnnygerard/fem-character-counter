@@ -42,9 +42,11 @@ const TextStats = ({ className, text }: Props) => {
                     minValue={0}
                     maxValue={100}
                   >
+                    {/* Meter track */}
                     <div className="h-3 rounded-full bg-neutral-100 dark:bg-neutral-800">
+                      {/* Meter fill */}
                       <div
-                        className="h-full rounded-full bg-purple-400"
+                        className="h-full rounded-full bg-purple-400 transition-[width]"
                         style={{ width: `${percentage}%` }}
                       />
                     </div>
