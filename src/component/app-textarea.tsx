@@ -58,7 +58,7 @@ const AppTextarea = ({
       />
       <FieldError
         className={cn(
-          "tv_small mt-3 flex items-center gap-2",
+          "tv_small mt-3 flex animate-fade-in items-center gap-2",
           "text-orange-800 dark:text-orange-500",
         )}
       >
