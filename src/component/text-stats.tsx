@@ -59,7 +59,7 @@ const TextStats = ({ className, text }: Props) => {
           {stats.length > COLLAPSED_LENGTH && (
             <AppFocusRing>
               <ToggleButton
-                className="mt-5 flex items-center gap-2 rounded-8"
+                className="mt-5 flex items-center gap-2 rounded-6"
                 onChange={setExpanded}
               >
                 {`See ${expanded ? "less" : "more"}`}
