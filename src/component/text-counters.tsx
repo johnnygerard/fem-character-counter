@@ -4,15 +4,15 @@ import ShapeWordCount from "@/component/svg/shape-word-count";
 import { cn } from "@/util/cn";
 import { countCharacters } from "@/util/count-characters";
 import { countSentences } from "@/util/count-sentences";
-import { countWords } from "@/util/count-words";
 import { memo } from "react";
 
 type Props = {
   className: string;
   text: string;
+  wordCount: number;
 };
 
-const TextCounters = ({ className, text }: Props) => {
+const TextCounters = ({ className, text, wordCount }: Props) => {
   const counters = [
     {
       count: countCharacters(text),
@@ -20,7 +20,7 @@ const TextCounters = ({ className, text }: Props) => {
       Shape: ShapeCharacterCount,
     },
     {
-      count: countWords(text),
+      count: wordCount,
       name: "Word Count",
       Shape: ShapeWordCount,
     },
