@@ -5,18 +5,26 @@ import { Dispatch, memo, SetStateAction } from "react";
 import { FieldError, TextArea, TextField } from "react-aria-components";
 
 type Props = {
-  characterLimit: number | null;
+  characterCount: number;
+  characterLimit: number;
+  hasCharacterLimit: boolean;
   text: string;
   setText: Dispatch<SetStateAction<string>>;
 };
 
-const AppTextarea = ({ characterLimit, text, setText }: Props) => {
+const AppTextarea = ({
+  characterCount,
+  characterLimit,
+  hasCharacterLimit,
+  text,
+  setText,
+}: Props) => {
   return (
     <TextField
       aria-label="Text to analyze"
       defaultValue={text}
       onChange={setText}
-      isInvalid={characterLimit !== null && text.length > characterLimit}
+      isInvalid={hasCharacterLimit && characterCount > characterLimit}
     >
       <TextArea
         placeholder="Start typing here… (or paste your text)"
