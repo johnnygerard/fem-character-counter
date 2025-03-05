@@ -6,6 +6,7 @@ import { memo } from "react";
 
 type Props = {
   className: string;
+  isSpaceExcluded: boolean;
   characterCount: number;
   wordCount: number;
   sentenceCount: number;
@@ -13,6 +14,7 @@ type Props = {
 
 const TextCounters = ({
   className,
+  isSpaceExcluded,
   characterCount,
   wordCount,
   sentenceCount,
@@ -20,7 +22,9 @@ const TextCounters = ({
   const counters = [
     {
       count: characterCount,
-      name: "Total Characters",
+      name: isSpaceExcluded
+        ? "Total Characters (no space)"
+        : "Total Characters",
       Shape: ShapeCharacterCount,
     },
     {
@@ -51,7 +55,7 @@ const TextCounters = ({
           <span className="tv_display z-10">
             {count.toString(10).padStart(2, "0")}
           </span>
-          {name}
+          <span className="z-10">{name}</span>
           <Shape
             aria-hidden
             className={cn(

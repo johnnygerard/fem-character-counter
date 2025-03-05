@@ -28,6 +28,7 @@ const TextAnalyzer = () => {
       </div>
       <TextCounters
         className="mt-10 dt:mt-12"
+        isSpaceExcluded={isSpaceExcluded}
         characterCount={characterCount}
         wordCount={wordCount}
         sentenceCount={sentenceCount}
