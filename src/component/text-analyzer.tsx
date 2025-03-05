@@ -11,9 +11,9 @@ import { memo, useState } from "react";
 
 const TextAnalyzer = () => {
   const [text, setText] = useState("");
-  const [isSpaceExcluded, setIsSpaceExcluded] = useState(false);
+  const [excludeSpaces, setExcludeSpaces] = useState(false);
   const normalizedText = text.normalize("NFD");
-  const characterCount = countCharacters(normalizedText, isSpaceExcluded);
+  const characterCount = countCharacters(normalizedText, excludeSpaces);
   const wordCount = countWords(normalizedText);
   const sentenceCount = countSentences(normalizedText);
 
@@ -21,7 +21,7 @@ const TextAnalyzer = () => {
     <>
       <AppTextarea text={normalizedText} setText={setText} />
       <div className="mt-4 flex gap-3 max-tb:flex-col tb:gap-6">
-        <AppCheckbox isSelected={isSpaceExcluded} onChange={setIsSpaceExcluded}>
+        <AppCheckbox isSelected={excludeSpaces} onChange={setExcludeSpaces}>
           Exclude Spaces
         </AppCheckbox>
         <AppCheckbox>Set Character Limit</AppCheckbox>
@@ -29,7 +29,7 @@ const TextAnalyzer = () => {
       </div>
       <TextCounters
         className="mt-10 dt:mt-12"
-        isSpaceExcluded={isSpaceExcluded}
+        excludeSpaces={excludeSpaces}
         characterCount={characterCount}
         wordCount={wordCount}
         sentenceCount={sentenceCount}

@@ -6,7 +6,7 @@ import { memo } from "react";
 
 type Props = {
   className: string;
-  isSpaceExcluded: boolean;
+  excludeSpaces: boolean;
   characterCount: number;
   wordCount: number;
   sentenceCount: number;
@@ -14,7 +14,7 @@ type Props = {
 
 const TextCounters = ({
   className,
-  isSpaceExcluded,
+  excludeSpaces,
   characterCount,
   wordCount,
   sentenceCount,
@@ -22,9 +22,7 @@ const TextCounters = ({
   const counters = [
     {
       count: characterCount,
-      name: isSpaceExcluded
-        ? "Total Characters (no space)"
-        : "Total Characters",
+      name: excludeSpaces ? "Total Characters (no space)" : "Total Characters",
       Shape: ShapeCharacterCount,
     },
     {
