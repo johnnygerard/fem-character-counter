@@ -44,7 +44,7 @@ const TextCounters = ({ className, text, wordCount }: Props) => {
             "relative overflow-hidden text-neutral-900",
           )}
         >
-          <span className="tv_display">
+          <span className="tv_display z-10">
             {count.toString(10).padStart(2, "0")}
           </span>
           {name}
