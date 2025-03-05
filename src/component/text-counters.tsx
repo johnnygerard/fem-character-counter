@@ -55,7 +55,9 @@ const TextCounters = ({
           <span className="tv_display z-10">
             {count.toString(10).padStart(2, "0")}
           </span>
-          <span className="z-10">{name}</span>
+          <span className="z-10 overflow-hidden text-nowrap text-ellipsis">
+            {name}
+          </span>
           <Shape
             aria-hidden
             className={cn(
