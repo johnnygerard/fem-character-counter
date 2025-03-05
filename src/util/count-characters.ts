@@ -1,5 +1,7 @@
 const segmenter = new Intl.Segmenter("en-US", { granularity: "grapheme" });
 
+const WHITESPACE = /\s/;
+
 export const countCharacters = (
   text: string,
   isSpaceExcluded = false,
@@ -9,7 +11,7 @@ export const countCharacters = (
 
   if (isSpaceExcluded) {
     for (const { segment } of segments) {
-      if (/\s/.test(segment)) continue;
+      if (WHITESPACE.test(segment)) continue;
       count++;
     }
   } else {
