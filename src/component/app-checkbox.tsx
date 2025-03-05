@@ -11,7 +11,7 @@ const AppCheckbox = ({ children, ...props }: CheckboxProps) => {
           <div
             aria-hidden
             className={cn(
-              "grid h-4 w-4 place-items-center rounded-4",
+              "grid size-4 place-items-center rounded-4",
               "transition-[background-color,border-color,box-shadow]",
               isFocusVisible &&
                 "shadow-[0_0_0_2px_var(--color-neutral-0),0_0_0_4px_var(--color-purple-400)]",
@@ -25,7 +25,7 @@ const AppCheckbox = ({ children, ...props }: CheckboxProps) => {
           >
             {isSelected && (
               <svg
-                className="h-3 w-3 stroke-neutral-900"
+                className="size-3 stroke-neutral-900"
                 viewBox="0 0 12 12"
                 fill="none"
               >

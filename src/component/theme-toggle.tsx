@@ -29,7 +29,7 @@ const ThemeToggle = () => {
         aria-label="Dark theme"
         className={cn(
           "grid place-items-center bg-neutral-100 dark:bg-neutral-700",
-          "h-8 w-8 rounded-6 tb:h-11 tb:w-11 tb:rounded-8",
+          "size-8 rounded-6 tb:h-11 tb:w-11 tb:rounded-8",
         )}
         onChange={handleChange}
       >
@@ -41,7 +41,7 @@ const ThemeToggle = () => {
               key={index}
               aria-hidden
               className={cn(
-                "h-5 w-5 animate-fade-in tb:h-1/2 tb:w-1/2",
+                "size-5 animate-fade-in tb:h-1/2 tb:w-1/2",
                 isSun ? "hidden dark:block" : "dark:hidden",
               )}
             />
