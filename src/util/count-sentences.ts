@@ -5,8 +5,8 @@ const BLANK_LINE = /^\s*$/;
 export const countSentences = (text: string): number => {
   let count = 0;
 
-  for (const segmentData of segmenter.segment(text)) {
-    if (segmentData.segment.match(BLANK_LINE)) continue;
+  for (const { segment } of segmenter.segment(text)) {
+    if (segment.match(BLANK_LINE)) continue;
     count++;
   }
 
