@@ -31,7 +31,7 @@ const TextStats = ({ className, text }: Props) => {
 
               return (
                 <li
-                  className="col-span-3 grid grid-cols-subgrid items-center"
+                  className="tv_small col-span-3 grid grid-cols-subgrid items-center"
                   key={letter}
                 >
                   <label id={id} className="w-4">
@@ -39,7 +39,6 @@ const TextStats = ({ className, text }: Props) => {
                   </label>
                   <Meter
                     aria-labelledby={id}
-                    className="tv_small"
                     value={percentage}
                     minValue={0}
                     maxValue={100}
