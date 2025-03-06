@@ -38,7 +38,6 @@ const TextStats = ({ className, text }: Props) => {
                     {letter}
                   </label>
                   <Meter
-                    key={letter}
                     aria-labelledby={id}
                     className="tv_small"
                     value={percentage}
