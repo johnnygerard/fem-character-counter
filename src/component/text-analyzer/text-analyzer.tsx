@@ -8,6 +8,7 @@ import { cn } from "@/util/cn";
 import { countCharacters } from "@/util/count-characters";
 import { countSentences } from "@/util/count-sentences";
 import { countWords } from "@/util/count-words";
+import { getLetterStats } from "@/util/get-letter-stats";
 import { memo, useState } from "react";
 import { Input, NumberField } from "react-aria-components";
 
@@ -64,7 +65,10 @@ const TextAnalyzer = () => {
         wordCount={wordCount}
         sentenceCount={sentenceCount}
       />
-      <LetterStatsSection className="mt-6" text={normalizedText} />
+      <LetterStatsSection
+        className="mt-6"
+        stats={getLetterStats(normalizedText)}
+      />
     </>
   );
 };

@@ -1,7 +1,7 @@
 import AppFocusRing from "@/component/app-focus-ring";
 import AppMeter from "@/component/app-meter";
 import IconChevron from "@/component/svg/icon-chevron";
-import { getLetterStats } from "@/util/get-letter-stats";
+import { LetterStats } from "@/type/letter-stats";
 import { memo, useState } from "react";
 import { ToggleButton } from "react-aria-components";
 
@@ -9,12 +9,11 @@ const COLLAPSED_LENGTH = 5;
 
 type Props = {
   className: string;
-  text: string;
+  stats: LetterStats[];
 };
 
-const LetterStatsSection = ({ className, text }: Props) => {
+const LetterStatsSection = ({ className, stats }: Props) => {
   const [expanded, setExpanded] = useState(false);
-  const stats = getLetterStats(text);
   const visibleStats = expanded ? stats : stats.slice(0, COLLAPSED_LENGTH);
 
   return (
