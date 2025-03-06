@@ -1,8 +1,9 @@
 import AppFocusRing from "@/component/app-focus-ring";
+import AppMeter from "@/component/app-meter";
 import IconChevron from "@/component/svg/icon-chevron";
 import { getLetterStats } from "@/util/get-letter-stats";
 import { memo, useState } from "react";
-import { Meter, ToggleButton } from "react-aria-components";
+import { ToggleButton } from "react-aria-components";
 
 const COLLAPSED_LENGTH = 5;
 
@@ -37,21 +38,7 @@ const TextStats = ({ className, text }: Props) => {
                   <label id={id} className="w-4">
                     {letter}
                   </label>
-                  <Meter
-                    aria-labelledby={id}
-                    value={percentage}
-                    minValue={0}
-                    maxValue={100}
-                  >
-                    {/* Meter track */}
-                    <div className="h-3 rounded-full bg-neutral-100 dark:bg-neutral-800">
-                      {/* Meter fill */}
-                      <div
-                        className="h-full rounded-full bg-purple-400 transition-[width]"
-                        style={{ width: `${percentage}%` }}
-                      />
-                    </div>
-                  </Meter>
+                  <AppMeter percentage={percentage} aria-labelledby={id} />
                   <span className="text-end">{`${count} (${percentage.toFixed(2)}%)`}</span>
                 </li>
               );
