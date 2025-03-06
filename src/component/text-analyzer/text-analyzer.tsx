@@ -1,7 +1,7 @@
 "use client";
 import AppCheckbox from "@/component/app-checkbox";
 import AppTextarea from "@/component/text-analyzer/app-textarea";
-import LetterStats from "@/component/text-analyzer/letter-stats";
+import LetterStatsSection from "@/component/text-analyzer/letter-stats-section";
 import ReadingTime from "@/component/text-analyzer/reading-time";
 import TextCounters from "@/component/text-analyzer/text-counters";
 import { cn } from "@/util/cn";
@@ -64,7 +64,7 @@ const TextAnalyzer = () => {
         wordCount={wordCount}
         sentenceCount={sentenceCount}
       />
-      <LetterStats className="mt-6" text={normalizedText} />
+      <LetterStatsSection className="mt-6" text={normalizedText} />
     </>
   );
 };

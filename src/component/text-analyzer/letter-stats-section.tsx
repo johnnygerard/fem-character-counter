@@ -12,7 +12,7 @@ type Props = {
   text: string;
 };
 
-const LetterStats = ({ className, text }: Props) => {
+const LetterStatsSection = ({ className, text }: Props) => {
   const [expanded, setExpanded] = useState(false);
   const stats = getLetterStats(text);
   const visibleStats = expanded ? stats : stats.slice(0, COLLAPSED_LENGTH);
@@ -65,4 +65,4 @@ const LetterStats = ({ className, text }: Props) => {
   );
 };
 
-export default memo(LetterStats);
+export default memo(LetterStatsSection);
