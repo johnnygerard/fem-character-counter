@@ -1,7 +1,7 @@
 "use client";
 import IconInfoCircle from "@/component/svg/icon-info-circle";
 import { cn } from "@/util/cn";
-import { Dispatch, memo, SetStateAction } from "react";
+import { memo } from "react";
 import { FieldError, TextArea, TextField } from "react-aria-components";
 
 type Props = {
@@ -9,7 +9,7 @@ type Props = {
   characterLimit: number;
   hasCharacterLimit: boolean;
   text: string;
-  setText: Dispatch<SetStateAction<string>>;
+  setText: (value: string) => void;
 };
 
 const AppTextarea = ({
