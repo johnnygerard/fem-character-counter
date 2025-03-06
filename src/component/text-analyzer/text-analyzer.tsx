@@ -1,9 +1,9 @@
 "use client";
 import AppCheckbox from "@/component/app-checkbox";
-import AppTextarea from "@/component/app-textarea";
-import ReadingTime from "@/component/reading-time";
-import TextCounters from "@/component/text-counters";
-import TextStats from "@/component/text-stats";
+import AppTextarea from "@/component/text-analyzer/app-textarea";
+import ReadingTime from "@/component/text-analyzer/reading-time";
+import TextCounters from "@/component/text-analyzer/text-counters";
+import TextStats from "@/component/text-analyzer/text-stats";
 import { cn } from "@/util/cn";
 import { countCharacters } from "@/util/count-characters";
 import { countSentences } from "@/util/count-sentences";

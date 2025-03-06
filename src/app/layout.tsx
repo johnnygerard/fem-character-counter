@@ -1,8 +1,8 @@
 import { loadTheme } from "@/app/actions";
-import AppRouterProvider from "@/component/app-router-provider";
-import Header from "@/component/header";
+import Header from "@/component/header/header";
 import Noscript from "@/component/noscript";
-import ThemeProvider from "@/component/theme-provider";
+import AppRouterProvider from "@/component/provider/app-router-provider";
+import ThemeProvider from "@/component/provider/theme-provider";
 import { cn } from "@/util/cn";
 import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";

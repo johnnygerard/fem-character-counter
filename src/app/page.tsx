@@ -1,4 +1,4 @@
-import TextAnalyzer from "@/component/text-analyzer";
+import TextAnalyzer from "@/component/text-analyzer/text-analyzer";
 import { cn } from "@/util/cn";
 import { memo } from "react";
 

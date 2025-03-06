@@ -1,5 +1,5 @@
-import Logo from "@/component/logo";
-import ThemeToggle from "@/component/theme-toggle";
+import Logo from "@/component/header/logo";
+import ThemeToggle from "@/component/header/theme-toggle";
 import { memo } from "react";
 
 const Header = () => {
