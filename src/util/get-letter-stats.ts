@@ -1,3 +1,5 @@
+import type { LetterStats } from "@/type/letter-stats";
+
 const getLetterCounts = (
   text: string,
 ): {
@@ -17,12 +19,6 @@ const getLetterCounts = (
   }
 
   return { counts, total };
-};
-
-type LetterStats = {
-  letter: string;
-  count: number;
-  percentage: number;
 };
 
 /**
