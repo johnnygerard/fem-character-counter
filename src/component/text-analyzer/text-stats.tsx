@@ -25,12 +25,15 @@ const TextStats = ({ className, text }: Props) => {
         </p>
       ) : (
         <>
-          <ol className="grid grid-cols-[auto_1fr_auto] items-center gap-x-3.5 gap-y-3">
+          <ol className="grid grid-cols-[auto_1fr_auto] gap-x-3.5 gap-y-3">
             {visibleStats.map(({ letter, count, percentage }) => {
               const id = `letter-${letter}`;
 
               return (
-                <li className="contents" key={letter}>
+                <li
+                  className="col-span-3 grid grid-cols-subgrid items-center"
+                  key={letter}
+                >
                   <label id={id} className="w-4">
                     {letter}
                   </label>
