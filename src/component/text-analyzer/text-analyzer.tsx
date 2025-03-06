@@ -43,7 +43,7 @@ const TextAnalyzer = () => {
               className="ms-2.5"
               aria-label="Character Limit"
               minValue={0}
-              value={characterLimit ?? 0}
+              value={characterLimit}
               onChange={setCharacterLimit}
             >
               <Input
