@@ -12,7 +12,7 @@ type Props = Readonly<{
 export const ThemeProvider = memo(({ children, initialTheme }: Props) => {
   const [theme, setTheme] = useState(initialTheme);
 
-  // Synchronize theme across tabs
+  // Listen for theme change from other tabs
   useEffect(() => {
     if (window.BroadcastChannel === undefined) return;
     const channel = new BroadcastChannel(THEME_KEY);
@@ -26,6 +26,7 @@ export const ThemeProvider = memo(({ children, initialTheme }: Props) => {
     };
   }, []);
 
+  // Synchronize theme with CSS
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
   }, [theme]);
