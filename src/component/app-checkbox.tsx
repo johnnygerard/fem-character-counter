@@ -3,12 +3,12 @@ import { cn } from "@/util/cn";
 import { memo } from "react";
 import { Checkbox, CheckboxProps } from "react-aria-components";
 
-const AppCheckbox = ({ children, ...props }: CheckboxProps) => {
+export const AppCheckbox = memo(({ children, ...props }: CheckboxProps) => {
   return (
     <Checkbox {...props}>
       {({ isHovered, isFocusVisible, isSelected }) => (
-        <div className={cn("flex cursor-pointer items-center gap-2.5")}>
-          <div
+        <span className={cn("flex cursor-pointer items-center gap-2.5")}>
+          <span
             aria-hidden
             className={cn(
               "grid size-4 place-items-center rounded-4",
@@ -37,14 +37,14 @@ const AppCheckbox = ({ children, ...props }: CheckboxProps) => {
                 />
               </svg>
             )}
-          </div>
+          </span>
           <span className="tv_small">
             <>{children}</>
           </span>
-        </div>
+        </span>
       )}
     </Checkbox>
   );
-};
+});
 
-export default memo(AppCheckbox);
+AppCheckbox.displayName = "AppCheckbox";

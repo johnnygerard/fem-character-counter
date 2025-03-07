@@ -1,17 +1,18 @@
 "use client";
-import AppCheckbox from "@/component/app-checkbox";
-import AppTextarea from "@/component/app-textarea";
-import ReadingTime from "@/component/reading-time";
-import TextCounters from "@/component/text-counters";
-import TextStats from "@/component/text-stats";
+import { AppCheckbox } from "@/component/app-checkbox";
+import { AppTextarea } from "@/component/text-analyzer/app-textarea";
+import { LetterStatsSection } from "@/component/text-analyzer/letter-stats-section";
+import { ReadingTime } from "@/component/text-analyzer/reading-time";
+import { TextCounters } from "@/component/text-analyzer/text-counters";
 import { cn } from "@/util/cn";
 import { countCharacters } from "@/util/count-characters";
 import { countSentences } from "@/util/count-sentences";
 import { countWords } from "@/util/count-words";
+import { getLetterStats } from "@/util/get-letter-stats";
 import { memo, useState } from "react";
 import { Input, NumberField } from "react-aria-components";
 
-const TextAnalyzer = () => {
+export const TextAnalyzer = memo(() => {
   const [text, setText] = useState("");
   const [excludeSpaces, setExcludeSpaces] = useState(false);
   const [characterLimit, setCharacterLimit] = useState(100);
@@ -43,7 +44,7 @@ const TextAnalyzer = () => {
               className="ms-2.5"
               aria-label="Character Limit"
               minValue={0}
-              value={characterLimit ?? 0}
+              value={characterLimit}
               onChange={setCharacterLimit}
             >
               <Input
@@ -64,9 +65,12 @@ const TextAnalyzer = () => {
         wordCount={wordCount}
         sentenceCount={sentenceCount}
       />
-      <TextStats className="mt-6" text={normalizedText} />
+      <LetterStatsSection
+        className="mt-6"
+        stats={getLetterStats(normalizedText)}
+      />
     </>
   );
-};
+});
 
-export default memo(TextAnalyzer);
+TextAnalyzer.displayName = "TextAnalyzer";

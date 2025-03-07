@@ -2,7 +2,7 @@ import { cn } from "@/util/cn";
 import { memo } from "react";
 import { FocusRing, FocusRingProps } from "react-aria";
 
-const AppFocusRing = (props: FocusRingProps) => {
+export const AppFocusRing = memo((props: FocusRingProps) => {
   return (
     <FocusRing
       focusRingClass={cn(
@@ -11,6 +11,6 @@ const AppFocusRing = (props: FocusRingProps) => {
       {...props}
     />
   );
-};
+});
 
-export default memo(AppFocusRing);
+AppFocusRing.displayName = "AppFocusRing";
