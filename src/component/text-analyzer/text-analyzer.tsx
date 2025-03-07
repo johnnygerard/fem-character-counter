@@ -1,9 +1,9 @@
 "use client";
-import AppCheckbox from "@/component/app-checkbox";
-import AppTextarea from "@/component/text-analyzer/app-textarea";
-import LetterStatsSection from "@/component/text-analyzer/letter-stats-section";
-import ReadingTime from "@/component/text-analyzer/reading-time";
-import TextCounters from "@/component/text-analyzer/text-counters";
+import { AppCheckbox } from "@/component/app-checkbox";
+import { AppTextarea } from "@/component/text-analyzer/app-textarea";
+import { LetterStatsSection } from "@/component/text-analyzer/letter-stats-section";
+import { ReadingTime } from "@/component/text-analyzer/reading-time";
+import { TextCounters } from "@/component/text-analyzer/text-counters";
 import { cn } from "@/util/cn";
 import { countCharacters } from "@/util/count-characters";
 import { countSentences } from "@/util/count-sentences";
@@ -12,7 +12,7 @@ import { getLetterStats } from "@/util/get-letter-stats";
 import { memo, useState } from "react";
 import { Input, NumberField } from "react-aria-components";
 
-const TextAnalyzer = () => {
+export const TextAnalyzer = memo(() => {
   const [text, setText] = useState("");
   const [excludeSpaces, setExcludeSpaces] = useState(false);
   const [characterLimit, setCharacterLimit] = useState(100);
@@ -71,6 +71,6 @@ const TextAnalyzer = () => {
       />
     </>
   );
-};
+});
 
-export default memo(TextAnalyzer);
+TextAnalyzer.displayName = "TextAnalyzer";

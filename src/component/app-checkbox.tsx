@@ -3,7 +3,7 @@ import { cn } from "@/util/cn";
 import { memo } from "react";
 import { Checkbox, CheckboxProps } from "react-aria-components";
 
-const AppCheckbox = ({ children, ...props }: CheckboxProps) => {
+export const AppCheckbox = memo(({ children, ...props }: CheckboxProps) => {
   return (
     <Checkbox {...props}>
       {({ isHovered, isFocusVisible, isSelected }) => (
@@ -45,6 +45,6 @@ const AppCheckbox = ({ children, ...props }: CheckboxProps) => {
       )}
     </Checkbox>
   );
-};
+});
 
-export default memo(AppCheckbox);
+AppCheckbox.displayName = "AppCheckbox";

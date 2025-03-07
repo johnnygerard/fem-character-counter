@@ -2,7 +2,7 @@ import { memo, SVGAttributes } from "react";
 
 type Props = SVGAttributes<SVGElement>;
 
-const IconSun = (props: Props) => {
+export const IconSun = memo((props: Props) => {
   return (
     <svg viewBox="0 0 22 22" fill="none" {...props}>
       <path
@@ -14,6 +14,6 @@ const IconSun = (props: Props) => {
       />
     </svg>
   );
-};
+});
 
-export default memo(IconSun);
+IconSun.displayName = "IconSun";

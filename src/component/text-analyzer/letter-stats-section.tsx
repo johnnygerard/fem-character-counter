@@ -1,6 +1,6 @@
-import AppFocusRing from "@/component/app-focus-ring";
-import AppMeter from "@/component/app-meter";
-import IconChevron from "@/component/svg/icon-chevron";
+import { AppFocusRing } from "@/component/app-focus-ring";
+import { AppMeter } from "@/component/app-meter";
+import { IconChevron } from "@/component/svg/icon-chevron";
 import { LetterStats } from "@/type/letter-stats";
 import { memo, useState } from "react";
 import { ToggleButton } from "react-aria-components";
@@ -12,7 +12,7 @@ type Props = {
   stats: LetterStats[];
 };
 
-const LetterStatsSection = ({ className, stats }: Props) => {
+export const LetterStatsSection = memo(({ className, stats }: Props) => {
   const [expanded, setExpanded] = useState(false);
   const visibleStats = expanded ? stats : stats.slice(0, COLLAPSED_LENGTH);
 
@@ -62,6 +62,6 @@ const LetterStatsSection = ({ className, stats }: Props) => {
       )}
     </section>
   );
-};
+});
 
-export default memo(LetterStatsSection);
+LetterStatsSection.displayName = "LetterStatsSection";

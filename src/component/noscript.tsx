@@ -1,6 +1,6 @@
 import { memo } from "react";
 
-const Noscript = () => {
+export const Noscript = memo(() => {
   return (
     <noscript>
       <div
@@ -43,6 +43,6 @@ const Noscript = () => {
       </div>
     </noscript>
   );
-};
+});
 
-export default memo(Noscript);
+Noscript.displayName = "Noscript";

@@ -5,7 +5,7 @@ type Props = SVGAttributes<SVGElement> & {
   direction: "up" | "down";
 };
 
-const IconChevron = ({ className, direction, ...props }: Props) => {
+export const IconChevron = memo(({ className, direction, ...props }: Props) => {
   return (
     <svg
       className={cn(
@@ -23,6 +23,6 @@ const IconChevron = ({ className, direction, ...props }: Props) => {
       />
     </svg>
   );
-};
+});
 
-export default memo(IconChevron);
+IconChevron.displayName = "IconChevron";

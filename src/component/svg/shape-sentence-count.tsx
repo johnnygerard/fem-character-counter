@@ -2,7 +2,7 @@ import { memo, SVGAttributes } from "react";
 
 type Props = SVGAttributes<SVGElement>;
 
-const ShapeSentenceCount = (props: Props) => {
+export const ShapeSentenceCount = memo((props: Props) => {
   return (
     <svg viewBox="0 0 150 150" fill="none" {...props}>
       <path
@@ -13,6 +13,6 @@ const ShapeSentenceCount = (props: Props) => {
       />
     </svg>
   );
-};
+});
 
-export default memo(ShapeSentenceCount);
+ShapeSentenceCount.displayName = "ShapeSentenceCount";

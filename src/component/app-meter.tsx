@@ -5,7 +5,7 @@ type Props = MeterProps & {
   percentage: number;
 };
 
-const AppMeter = ({ percentage, ...props }: Props) => {
+export const AppMeter = memo(({ percentage, ...props }: Props) => {
   return (
     <Meter minValue={0} maxValue={100} value={percentage} {...props}>
       {/* Meter track */}
@@ -18,6 +18,6 @@ const AppMeter = ({ percentage, ...props }: Props) => {
       </div>
     </Meter>
   );
-};
+});
 
-export default memo(AppMeter);
+AppMeter.displayName = "AppMeter";

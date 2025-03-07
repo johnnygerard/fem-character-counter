@@ -2,7 +2,7 @@ import { memo, SVGAttributes } from "react";
 
 type Props = SVGAttributes<SVGElement>;
 
-const IconInfoCircle = (props: Props) => {
+export const IconInfoCircle = memo((props: Props) => {
   return (
     <svg viewBox="0 0 14 15" fill="none" {...props}>
       <path
@@ -11,6 +11,6 @@ const IconInfoCircle = (props: Props) => {
       />
     </svg>
   );
-};
+});
 
-export default memo(IconInfoCircle);
+IconInfoCircle.displayName = "IconInfoCircle";

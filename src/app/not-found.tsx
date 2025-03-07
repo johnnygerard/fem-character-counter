@@ -1,4 +1,4 @@
-import AppLink from "@/component/app-link";
+import { AppLink } from "@/component/app-link";
 import { Metadata } from "next";
 import { memo } from "react";
 

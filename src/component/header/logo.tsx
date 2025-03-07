@@ -1,7 +1,7 @@
-import Logomark from "@/component/svg/logomark";
+import { Logomark } from "@/component/svg/logomark";
 import { memo } from "react";
 
-const Logo = () => {
+export const Logo = memo(() => {
   return (
     <div className="flex items-center gap-2.25 tb:gap-3">
       <Logomark
@@ -13,6 +13,6 @@ const Logo = () => {
       </span>
     </div>
   );
-};
+});
 
-export default memo(Logo);
+Logo.displayName = "Logo";

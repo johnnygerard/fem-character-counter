@@ -7,12 +7,12 @@ type Props = {
   wordCount: number;
 };
 
-const ReadingTime = ({ className, wordCount }: Props) => {
+export const ReadingTime = memo(({ className, wordCount }: Props) => {
   return (
     <p className={cn("tv_small", className)}>
       Approx. reading time: {getReadingTime(wordCount)}
     </p>
   );
-};
+});
 
-export default memo(ReadingTime);
+ReadingTime.displayName = "ReadingTime";

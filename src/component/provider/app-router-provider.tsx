@@ -19,10 +19,10 @@ type Props = {
   children: ReactNode;
 };
 
-const AppRouterProvider = ({ children }: Props) => {
+export const AppRouterProvider = memo(({ children }: Props) => {
   const router = useRouter();
 
   return <RouterProvider navigate={router.push}>{children}</RouterProvider>;
-};
+});
 
-export default memo(AppRouterProvider);
+AppRouterProvider.displayName = "AppRouterProvider";

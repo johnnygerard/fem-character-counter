@@ -9,7 +9,7 @@ type Props = Readonly<{
   initialTheme: THEME;
 }>;
 
-const ThemeProvider = ({ children, initialTheme }: Props) => {
+export const ThemeProvider = memo(({ children, initialTheme }: Props) => {
   const [theme, setTheme] = useState(initialTheme);
 
   // Synchronize theme across tabs
@@ -56,6 +56,6 @@ const ThemeProvider = ({ children, initialTheme }: Props) => {
       {children}
     </ThemeContext.Provider>
   );
-};
+});
 
-export default memo(ThemeProvider);
+ThemeProvider.displayName = "ThemeProvider";

@@ -1,14 +1,14 @@
 "use client";
-import AppFocusRing from "@/component/app-focus-ring";
-import IconMoon from "@/component/svg/icon-moon";
-import IconSun from "@/component/svg/icon-sun";
+import { AppFocusRing } from "@/component/app-focus-ring";
+import { IconMoon } from "@/component/svg/icon-moon";
+import { IconSun } from "@/component/svg/icon-sun";
 import { useContextTheme } from "@/hook/use-context-theme";
 import { THEME } from "@/type/theme";
 import { cn } from "@/util/cn";
 import { memo } from "react";
 import { ToggleButton } from "react-aria-components";
 
-const ThemeToggle = () => {
+export const ThemeToggle = memo(() => {
   const { setTheme } = useContextTheme();
 
   const handleChange = (): void => {
@@ -50,6 +50,6 @@ const ThemeToggle = () => {
       </ToggleButton>
     </AppFocusRing>
   );
-};
+});
 
-export default memo(ThemeToggle);
+ThemeToggle.displayName = "ThemeToggle";
