@@ -5,6 +5,7 @@ export const ThemeContext = createContext<
   | {
       theme: THEME;
       setTheme: (theme: THEME) => void;
+      toggleTheme: () => void;
     }
   | undefined
 >(undefined);

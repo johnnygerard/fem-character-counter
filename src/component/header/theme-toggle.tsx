@@ -3,25 +3,12 @@ import { AppFocusRing } from "@/component/app-focus-ring";
 import { IconMoon } from "@/component/svg/icon-moon";
 import { IconSun } from "@/component/svg/icon-sun";
 import { useContextTheme } from "@/hook/use-context-theme";
-import { THEME } from "@/type/theme";
 import { cn } from "@/util/cn";
 import { memo } from "react";
 import { ToggleButton } from "react-aria-components";
 
 export const ThemeToggle = memo(() => {
-  const { setTheme } = useContextTheme();
-
-  const handleChange = (): void => {
-    const theme = document.documentElement.getAttribute("data-theme");
-    if (theme === null) throw new Error('Missing "data-theme" attribute');
-
-    const isDark =
-      (theme === THEME.SYSTEM &&
-        matchMedia("(prefers-color-scheme: dark)").matches) ||
-      theme === THEME.DARK;
-
-    setTheme(isDark ? THEME.LIGHT : THEME.DARK);
-  };
+  const { toggleTheme } = useContextTheme();
 
   return (
     <AppFocusRing>
@@ -31,7 +18,7 @@ export const ThemeToggle = memo(() => {
           "grid place-items-center bg-neutral-100 dark:bg-neutral-700",
           "size-8 rounded-6 tb:h-11 tb:w-11 tb:rounded-8",
         )}
-        onChange={handleChange}
+        onChange={toggleTheme}
       >
         {[IconSun, IconMoon].map((Icon, index) => {
           const isSun = index === 0;

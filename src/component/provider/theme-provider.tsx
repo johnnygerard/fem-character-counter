@@ -51,8 +51,19 @@ export const ThemeProvider = memo(({ children, initialTheme }: Props) => {
     }
   };
 
+  const toggleTheme = (): void => {
+    const isDark =
+      (theme === THEME.SYSTEM &&
+        matchMedia("(prefers-color-scheme: dark)").matches) ||
+      theme === THEME.DARK;
+
+    handleThemeChange(isDark ? THEME.LIGHT : THEME.DARK);
+  };
+
   return (
-    <ThemeContext.Provider value={{ theme, setTheme: handleThemeChange }}>
+    <ThemeContext.Provider
+      value={{ theme, setTheme: handleThemeChange, toggleTheme }}
+    >
       {children}
     </ThemeContext.Provider>
   );
