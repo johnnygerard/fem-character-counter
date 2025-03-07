@@ -7,8 +7,8 @@ export const AppCheckbox = memo(({ children, ...props }: CheckboxProps) => {
   return (
     <Checkbox {...props}>
       {({ isHovered, isFocusVisible, isSelected }) => (
-        <div className={cn("flex cursor-pointer items-center gap-2.5")}>
-          <div
+        <span className={cn("flex cursor-pointer items-center gap-2.5")}>
+          <span
             aria-hidden
             className={cn(
               "grid size-4 place-items-center rounded-4",
@@ -37,11 +37,11 @@ export const AppCheckbox = memo(({ children, ...props }: CheckboxProps) => {
                 />
               </svg>
             )}
-          </div>
+          </span>
           <span className="tv_small">
             <>{children}</>
           </span>
-        </div>
+        </span>
       )}
     </Checkbox>
   );
