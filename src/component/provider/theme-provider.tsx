@@ -2,7 +2,7 @@
 import { THEME_KEY } from "@/constants";
 import { ThemeContext } from "@/context/theme-context";
 import { Theme, THEME } from "@/type/theme";
-import { memo, ReactNode, useEffect, useState } from "react";
+import { memo, ReactNode, useEffect, useRef, useState } from "react";
 
 type Props = {
   children: ReactNode;
@@ -11,11 +11,21 @@ type Props = {
 
 export const ThemeProvider = memo(({ children, initialTheme }: Props) => {
   const [theme, setTheme] = useState(initialTheme);
+  const channelRef = useRef<BroadcastChannel | null>(null);
 
   // Listen for theme change from other tabs
   useEffect(() => {
-    if (window.BroadcastChannel === undefined) return;
+    if (window.BroadcastChannel === undefined) {
+      console.warn(
+        "Unsupported BroadcastChannel:",
+        "Unable to synchronize theme across tabs.",
+      );
+
+      return;
+    }
+
     const channel = new BroadcastChannel(THEME_KEY);
+    channelRef.current = channel;
 
     channel.onmessage = ({ data }: MessageEvent<Theme>) => {
       setTheme(data);
@@ -44,12 +54,7 @@ export const ThemeProvider = memo(({ children, initialTheme }: Props) => {
     ].join("; ");
 
     // Broadcast theme change to other tabs
-    if (window.BroadcastChannel) {
-      const channel = new BroadcastChannel(THEME_KEY);
-
-      channel.postMessage(theme);
-      channel.close();
-    }
+    channelRef.current?.postMessage(theme);
   };
 
   const toggleTheme = (): void => {
