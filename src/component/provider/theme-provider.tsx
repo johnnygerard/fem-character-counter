@@ -4,10 +4,10 @@ import { ThemeContext } from "@/context/theme-context";
 import { Theme, THEME } from "@/type/theme";
 import { memo, ReactNode, useEffect, useState } from "react";
 
-type Props = Readonly<{
+type Props = {
   children: ReactNode;
   initialTheme: Theme;
-}>;
+};
 
 export const ThemeProvider = memo(({ children, initialTheme }: Props) => {
   const [theme, setTheme] = useState(initialTheme);
