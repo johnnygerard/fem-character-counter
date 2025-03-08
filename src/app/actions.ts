@@ -1,6 +1,6 @@
 "use server";
 import { THEME_KEY } from "@/constants";
-import { Theme, THEME } from "@/type/theme";
+import { type Theme, THEME } from "@/type/theme";
 import { cookies } from "next/headers";
 
 export const loadTheme = async (): Promise<Theme> => {

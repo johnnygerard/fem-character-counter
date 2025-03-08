@@ -1,8 +1,8 @@
 "use client";
 import { THEME_KEY } from "@/constants";
 import { ThemeContext } from "@/context/theme-context";
-import { Theme, THEME } from "@/type/theme";
-import { memo, ReactNode, useEffect, useRef, useState } from "react";
+import { type Theme, THEME } from "@/type/theme";
+import { memo, type ReactNode, useEffect, useRef, useState } from "react";
 
 type Props = {
   children: ReactNode;

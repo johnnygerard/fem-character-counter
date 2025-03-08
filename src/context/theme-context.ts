@@ -1,4 +1,4 @@
-import { Theme } from "@/type/theme";
+import type { Theme } from "@/type/theme";
 import { createContext } from "react";
 
 export const ThemeContext = createContext<

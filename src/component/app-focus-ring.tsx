@@ -1,6 +1,6 @@
 import { cn } from "@/util/cn";
 import { memo } from "react";
-import { FocusRing, FocusRingProps } from "react-aria";
+import { FocusRing, type FocusRingProps } from "react-aria";
 
 export const AppFocusRing = memo((props: FocusRingProps) => {
   return (
