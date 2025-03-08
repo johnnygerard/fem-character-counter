@@ -1,12 +1,12 @@
 "use client";
 import { THEME_KEY } from "@/constants";
 import { ThemeContext } from "@/context/theme-context";
-import { THEME } from "@/type/theme";
+import { Theme, THEME } from "@/type/theme";
 import { memo, ReactNode, useEffect, useState } from "react";
 
 type Props = Readonly<{
   children: ReactNode;
-  initialTheme: THEME;
+  initialTheme: Theme;
 }>;
 
 export const ThemeProvider = memo(({ children, initialTheme }: Props) => {
@@ -17,7 +17,7 @@ export const ThemeProvider = memo(({ children, initialTheme }: Props) => {
     if (window.BroadcastChannel === undefined) return;
     const channel = new BroadcastChannel(THEME_KEY);
 
-    channel.onmessage = ({ data }: MessageEvent<THEME>) => {
+    channel.onmessage = ({ data }: MessageEvent<Theme>) => {
       setTheme(data);
     };
 
@@ -31,7 +31,7 @@ export const ThemeProvider = memo(({ children, initialTheme }: Props) => {
     document.documentElement.setAttribute("data-theme", theme);
   }, [theme]);
 
-  const handleThemeChange = (theme: THEME): void => {
+  const handleThemeChange = (theme: Theme): void => {
     setTheme(theme);
 
     // Persist theme with a cookie
