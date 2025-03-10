@@ -2,13 +2,13 @@
 import { AppFocusRing } from "@/component/app-focus-ring";
 import { IconMoon } from "@/component/svg/icon-moon";
 import { IconSun } from "@/component/svg/icon-sun";
-import { useContextTheme } from "@/hook/use-context-theme";
 import { cn } from "@/util/cn";
+import { useThemeContext } from "next-theme-provider";
 import { memo } from "react";
 import { ToggleButton } from "react-aria-components";
 
 export const ThemeToggle = memo(() => {
-  const { toggleTheme } = useContextTheme();
+  const { toggleTheme } = useThemeContext();
 
   return (
     <AppFocusRing>
