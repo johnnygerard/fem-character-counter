@@ -4,7 +4,7 @@
  */
 "use client";
 import { useRouter } from "next/navigation";
-import { memo, ReactNode } from "react";
+import { memo, type ReactNode } from "react";
 import { RouterProvider } from "react-aria-components";
 
 declare module "react-aria-components" {

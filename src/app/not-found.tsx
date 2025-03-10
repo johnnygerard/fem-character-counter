@@ -1,5 +1,5 @@
 import { AppLink } from "@/component/app-link";
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import { memo } from "react";
 
 export const metadata: Metadata = {

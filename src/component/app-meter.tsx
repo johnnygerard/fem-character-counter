@@ -1,5 +1,5 @@
 import { memo } from "react";
-import { Meter, MeterProps } from "react-aria-components";
+import { Meter, type MeterProps } from "react-aria-components";
 
 type Props = MeterProps & {
   percentage: number;

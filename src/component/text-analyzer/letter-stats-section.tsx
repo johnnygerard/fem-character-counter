@@ -1,7 +1,7 @@
 import { AppFocusRing } from "@/component/app-focus-ring";
 import { AppMeter } from "@/component/app-meter";
 import { IconChevron } from "@/component/svg/icon-chevron";
-import { LetterStats } from "@/type/letter-stats";
+import type { LetterStats } from "@/type/letter-stats";
 import { memo, useState } from "react";
 import { ToggleButton } from "react-aria-components";
 

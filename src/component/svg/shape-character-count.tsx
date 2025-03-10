@@ -1,4 +1,4 @@
-import { memo, SVGAttributes } from "react";
+import { memo, type SVGAttributes } from "react";
 
 type Props = SVGAttributes<SVGElement>;
 

@@ -1,7 +1,7 @@
 "use client";
 import { cn } from "@/util/cn";
 import { memo } from "react";
-import { Checkbox, CheckboxProps } from "react-aria-components";
+import { Checkbox, type CheckboxProps } from "react-aria-components";
 
 export const AppCheckbox = memo(({ children, ...props }: CheckboxProps) => {
   return (
