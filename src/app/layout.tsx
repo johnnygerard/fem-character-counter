@@ -18,7 +18,7 @@ const APP_NAME = "Character counter";
 const DESCRIPTION = `Frontend Mentor challenge: ${APP_NAME}`;
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://example.com/placeholder"),
+  metadataBase: new URL("https://fem-character-counter-jgerard.vercel.app/"),
   title: {
     template: `%s | ${APP_NAME}`,
     default: APP_NAME,
